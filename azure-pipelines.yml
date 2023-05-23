@@ -3,7 +3,7 @@ pool: 'Default'
 trigger:
   - main
 steps:
-  - task: Maven@4
+  - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
       goals: 'package'
