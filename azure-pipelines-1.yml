@@ -1,11 +1,9 @@
 ---
-pool: 
-  name: 'azure pipeline' 
-  vmImage: ubuntu-22.04
+pool: Default
 trigger:
   - main
 steps:
-  - task: Maven@4
+  - task: Maven@3
     inputs:
       mavenPomFile: 'pom.xml'
       goals: 'package'
