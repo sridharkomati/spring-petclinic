@@ -1,0 +1,12 @@
+---
+pool: 
+  name: 'azure pipeline' 
+  vmImage: ubuntu-22.04
+trigger:
+  - main
+steps:
+  - task: Maven@4
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'package'
+      jdkVersionOption: '1.17'
