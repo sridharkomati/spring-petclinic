@@ -3,5 +3,5 @@ pool: Default
 trigger:
   - main
 steps:
-  - script:
-    aws --version
+  - script: 'aws --version'
+    
