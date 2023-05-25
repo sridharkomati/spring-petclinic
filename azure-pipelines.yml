@@ -13,8 +13,8 @@ steps:
     javaHomeOption: 'Path'
     jdkDirectory: '/usr/lib/jvm/java-1.17.0-openjdk-amd64'
     mavenVersionOption: 'Path'
-    mavenDirectory: '/usr/share/maven/'
-    mavenSetM2Home: true
+    mavenDirectory: '/usr/share/maven'
+    mavenSetM2Home: false
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
