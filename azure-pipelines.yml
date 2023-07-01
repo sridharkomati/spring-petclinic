@@ -1,6 +1,7 @@
 ---
 
-pool: ubuntu-latest
+pool: 
+ - vmImage: ubuntu-latest
 
 trigger:
   - main
