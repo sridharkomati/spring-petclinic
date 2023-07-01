@@ -1,6 +1,6 @@
 ---
 
-pool: 'Default'
+pool: ubuntu-latest
 
 trigger:
   - main
