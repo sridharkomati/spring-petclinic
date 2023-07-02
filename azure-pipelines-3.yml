@@ -26,5 +26,5 @@ stages:
         containerRegistry: 'Docker Hub'
         repository: '/ spring_project'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: '**/spc.dockerfile'
         
