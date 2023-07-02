@@ -24,7 +24,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker Hub'
-        repository: '/ spring_project'
+        repository: 'hema789/spring_project'
         command: 'buildAndPush'
         Dockerfile: '**/spc.dockerfile'
         
