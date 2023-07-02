@@ -1,20 +1,14 @@
----
 
-pool: 'Default'
+pool:
+    vmImage: 'ubuntu-latest'
 
 trigger:
   - main
 steps:
-- task: Maven@4
+- task: Docker@2
   inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'Path'
-    jdkDirectory: '/usr/lib/jvm/java-1.17.0-openjdk-amd64'
-    mavenVersionOption: 'Path'
-    mavenDirectory: '/usr/share/maven'
-    mavenSetM2Home: false
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+    containerRegistry: 'Docker Hub'
+    repository: 'hema789/spring_project'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    tags: 'latest'

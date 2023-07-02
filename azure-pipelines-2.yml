@@ -1,0 +1,27 @@
+---
+pool: Azure Pipelines
+trigger: 
+  - master
+steps:
+  - task: Maven@4
+    inputs:
+      mavenPOMFile: 'pom.xml' 
+      goals: 'package'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      allowBrokenSymlinks: true
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.17'
+      mavenVersionOption: 3.6.3
+  - task: CopyFiles@2
+    inputs:
+      Contents: '**/target/*.jar'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: $(Build.ArtifactStagingDirectory)
+      artifactName: My-spring-projects
+
+  
+
+
