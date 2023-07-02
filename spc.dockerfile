@@ -1,4 +1,3 @@
-
 FROM ubuntu:latest
 RUN apt update && apt install openjdk-17-jdk -y && apt install maven -y && apt install git -y 
 RUN git clone https://github.com/spring-projects/spring-petclinic.git && cd spring-petclinic && \
