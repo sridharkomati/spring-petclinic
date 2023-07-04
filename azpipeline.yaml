@@ -9,4 +9,4 @@ extends:
   parameters:
     branch: 'master'
     goal: 'build'
-    jdkVersion: '1.17'
+    javaversion: '1.17'
