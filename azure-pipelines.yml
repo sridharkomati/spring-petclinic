@@ -1,14 +1,12 @@
-
+---
 pool:
-    vmImage: 'ubuntu-latest'
-
-trigger:
-  - main
-steps:
-- task: Docker@2
-  inputs:
-    containerRegistry: 'Docker Hub'
-    repository: 'hema789/spring_project'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
-    tags: 'latest'
+  name: Azure Pipelines
+  vmImage: ubuntu-latest
+trigger: 
+  - master
+extends:
+  template: ./templet/spring.yaml
+  parameters:
+    branch: 'master'
+    goal: 'build'
+    jdkVersion: '1.17'
