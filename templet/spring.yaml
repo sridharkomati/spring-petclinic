@@ -5,7 +5,7 @@ parameters:
     type: string
     default: 'main'
   - name: goal
-    displayname: build
+    displayName: build
     type: string
     default: 'package'
   - name: javaversion
