@@ -26,7 +26,7 @@ steps:
     bucketName: 'poorilu'
     sourceFolder: '$(Build.ArtifactStagingDirectory)'
     globExpressions: '**'
-    targetFolder: 'https://poorilu.s3.us-east-2.amazonaws.com/'$(Build.ArtifactStagingDirectory)'
+    targetFolder: 'https://poorilu.s3.us-east-2.amazonaws.com/$(Build.ArtifactStagingDirectory)'
     filesAcl: 'public-read'
 
 
