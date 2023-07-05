@@ -24,9 +24,9 @@ steps:
     awsCredentials: 'aws'
     regionName: 'us-east-1'
     bucketName: 'poorilu'
-    sourceFolder: '**/target/*.jar'
+    sourceFolder: '$(Build.ArtifactStagingDirectory)'
     globExpressions: '**'
-    targetFolder: 'https://poorilu.s3.us-east-2.amazonaws.com/*.war'
+    targetFolder: 'https://poorilu.s3.us-east-2.amazonaws.com/'$(Build.ArtifactStagingDirectory)'
     filesAcl: 'public-read'
 
 
