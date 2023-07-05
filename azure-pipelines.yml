@@ -1,12 +1,25 @@
----
-pool:
+pool: 
   name: Azure Pipelines
   vmImage: ubuntu-latest
-trigger: 
-  - master
-extends:
-  template: ./templet/spring.yaml
-  parameters:
-    branch: 'master'
-    goal: 'build'
-    javaversion: '1.17'
+trigger:
+  - main
+steps:
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.17'
+- task: CopyFiles@2
+  inputs:
+    Contents: '**/target/*.war'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'spc'
+    publishLocation: 'Container'
+
+
+   
