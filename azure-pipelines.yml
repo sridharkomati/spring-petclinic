@@ -27,6 +27,14 @@ steps:
     sourceFolder: '$(Build.ArtifactStagingDirectory)'
     globExpressions: '**'
     targetFolder: 'https://poorilu.s3.us-east-2.amazonaws.com/$(Build.ArtifactStagingDirectory)'
+- task: ECRPushImage@1
+  inputs:
+    awsCredentials: 'aws'
+    regionName: 'us-east-1'
+    imageSource: 'imagename'
+    sourceImageName: 'spc'
+    repositoryName: 'adp'
+    autoCreateRepository: true
   
 
 
