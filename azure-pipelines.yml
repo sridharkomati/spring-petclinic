@@ -16,5 +16,5 @@ steps:
     scannerMode: 'CLI'
     cliProjectKey: 'sohail'
     cliProjectName: 'sohail_spring'
-    cliSources: '.'
+    cliSources: 'src'
 
