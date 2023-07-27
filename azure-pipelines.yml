@@ -12,7 +12,7 @@ steps:
     sonarQubeRunAnalysis: true
 - task: SonarQubePrepare@4
   inputs:
-    SonarQube: 'SONAR_CLOUD'
+    SonarQube: 'SONAR_CLOUDY'
     scannerMode: 'CLI'
     cliProjectKey: 'sohail'
     cliProjectName: 'sohail_spring'
