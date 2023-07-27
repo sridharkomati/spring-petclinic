@@ -13,8 +13,9 @@ steps:
 - task: SonarQubePrepare@5
   inputs:
     SonarQube: 'SONAR_CLOUD'
-    scannerMode: 'MSBuild'
-    projectKey: 'sohail'
-    projectName: 'sohail_spring'
+    scannerMode: 'CLI'
+    cliProjectKey: 'sohail'
+    cliProjectName 'sohail_spring'
     projectVersion: '1.0'
+    cliSources: 'src'
 
