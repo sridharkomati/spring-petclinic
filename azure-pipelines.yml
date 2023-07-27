@@ -9,9 +9,12 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
     jdkversionOption: '1.17'
-- task: SonarQubePreBuild@1
+    sonarQubeRunAnalysis: true
+- task: SonarQubePrepare@5
   inputs:
-    projectKey: 'sohail_spring'
-    projectName: 'sohail'
+    SonarQube: 'SONAR_CLOUD'
+    scannerMode: 'MSBuild'
+    projectKey: 'sohail'
+    projectName: 'sohail_spring'
     projectVersion: '1.0'
-- task: SonarQubePostTest@1
+
