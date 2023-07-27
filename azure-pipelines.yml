@@ -15,7 +15,6 @@ steps:
     SonarQube: 'SONAR_CLOUD'
     scannerMode: 'CLI'
     cliProjectKey: 'sohail'
-    cliProjectName 'sohail_spring'
-    projectVersion: '1.0'
-    cliSources: 'src'
+    cliProjectName: 'sohail_spring'
+    cliSources: '.'
 
