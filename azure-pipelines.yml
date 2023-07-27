@@ -10,7 +10,7 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkversionOption: '1.17'
     sonarQubeRunAnalysis: true
-- task: SonarQubePrepare@5
+- task: SonarQubePrepare@4
   inputs:
     SonarQube: 'SONAR_CLOUD'
     scannerMode: 'CLI'
